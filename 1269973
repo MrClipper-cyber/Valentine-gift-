@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Mrinalin 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #1b1b3a, #050510);
+  color: #fff;
+  overflow-y: auto;
+}
+
+/* ---------- Floating Hearts ---------- */
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  color: rgba(255, 105, 180, 0.6);
+  font-size: 18px;
+  animation: float 8s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh) scale(0.6); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+/* ---------- Sections ---------- */
+.section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #ff7eb6;
+  text-shadow: 0 0 15px rgba(255,126,182,0.5);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  margin: 15px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background: #ff5fa2;
+  color: white;
+  box-shadow: 0 0 15px rgba(255,95,162,0.6);
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- Teddy ---------- */
+.teddy {
+  font-size: 70px;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ---------- Gallery ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 700px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 20px rgba(255,105,180,0.2);
+}
+
+/* ---------- Quotes ---------- */
+.quote {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 15px 0;
+  box-shadow: 0 0 20px rgba(255,126,182,0.15);
+}
+
+/* ---------- Smooth Scroll ---------- */
+html {
+  scroll-behavior: smooth;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+<div class="hearts">
+  <span class="heart" style="left:10%; animation-delay:0s;">💖</span>
+  <span class="heart" style="left:30%; animation-delay:2s;">💗</span>
+  <span class="heart" style="left:50%; animation-delay:4s;">💘</span>
+  <span class="heart" style="left:70%; animation-delay:1s;">💓</span>
+  <span class="heart" style="left:90%; animation-delay:3s;">💞</span>
+</div>
+
+<!-- PAGE 1 -->
+<section class="section" id="page1">
+  <div class="teddy">🧸💌</div>
+  <h1>Mrinalin, will you be my Valentine?</h1>
+  <button class="btn" onclick="goTo('page2')">Yes 💖</button>
+  <button class="btn" onclick="nope()">No 🙈</button>
+</section>
+
+<!-- PAGE 2 -->
+<section class="section" id="page2">
+  <div class="teddy">🧸🌹</div>
+  <h1>Happy Valentine’s Day</h1>
+  <p>
+    Even when I’m not beside you,<br>
+    my heart always finds its way to you.<br><br>
+    I’m sorry that I’m not with you right now,<br>
+    but I promise I’ll be there for you next time.
+  </p>
+  <br>
+  <button class="btn" onclick="goTo('page3')">Next 💕</button>
+</section>
+
+<!-- PAGE 3 -->
+<section class="section" id="page3">
+  <div class="teddy">🧸📸</div>
+  <h1>My Favorite View</h1>
+
+  <div class="gallery">
+    <img src="/storage/emulated/0/Pictures/Instagram/IMG_20251218_120435_251.jpg">
+    <img src="/storage/emulated/0/Pictures/Instagram/IMG_20260102_212704_061.jpg">
+    <img src="/storage/emulated/0/Pictures/Instagram/IMG_20251122_205339_602.jpg">
+    <img src="/storage/emulated/0/Pictures/Instagram/IMG_20251112_093024_715.jpg">
+  </div>
+
+  <br>
+  <button class="btn" onclick="goTo('page4')">Next 💗</button>
+</section>
+
+<!-- PAGE 4 -->
+<section class="section" id="page4">
+  <div class="teddy">🧸💞</div>
+  <h1>Just for You</h1>
+
+  <div class="quote">You feel like home to my heart.</div>
+  <div class="quote">Loving you is my favorite feeling.</div>
+  <div class="quote">In every lifetime, I’d still choose you.</div>
+
+  <p style="margin-top:30px;">— From Tejas 💙</p>
+</section>
+
+<script>
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({behavior: "smooth"});
+}
+
+function nope() {
+  alert("Nice try 😌 You don’t get that option 💖");
+}
+</script>
+
+</body>
+</html>
